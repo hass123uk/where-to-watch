@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
+    # Not sure if needed or if there is a problem with writing include twice I just don't want a broken homepage.
+    path("", include("polls.urls")),
     path("polls/", include("polls.urls")),
     path('admin/', admin.site.urls),
 ]
